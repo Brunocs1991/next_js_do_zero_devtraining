@@ -93,3 +93,4 @@ fabric.properties
 
 
 **/node_modules/**
+/devtraining/dist/
