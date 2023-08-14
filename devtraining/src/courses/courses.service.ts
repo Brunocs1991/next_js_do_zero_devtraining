@@ -24,11 +24,11 @@ export class CoursesService {
     this.courses.push(createCourseDto);
   }
 
-  update(id: string, updateCourseDTO: any): void {
+  update(id: string, updateCourseDto: any): void {
     const indexCourse: number = this.courses.findIndex(
       (course: Course) => course.id === Number(id),
     );
-    this.courses[indexCourse] = updateCourseDTO;
+    this.courses[indexCourse] = updateCourseDto;
   }
 
   remove(id: string): void {
