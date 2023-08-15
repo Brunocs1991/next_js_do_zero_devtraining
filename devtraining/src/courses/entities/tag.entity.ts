@@ -6,7 +6,7 @@ export class Tag {
   @PrimaryGeneratedColumn()
   id: number;
   @Column()
-  nome: string;
+  name: string;
 
   @ManyToMany(() => Course, (course: Course) => course.tags)
   courses: Course[];
