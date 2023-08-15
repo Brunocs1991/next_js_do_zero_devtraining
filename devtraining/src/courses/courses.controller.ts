@@ -8,7 +8,6 @@ import {
   Post,
 } from '@nestjs/common';
 import { CoursesService } from './courses.service';
-import { Course } from './entities/course.entity';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { CreateCourseDto } from './dto/create-course.dto';
 
@@ -17,7 +16,7 @@ export class CoursesController {
   constructor(private readonly coursesService: CoursesService) {}
 
   @Get()
-  findAll(): Course[] {
+  findAll() {
     return this.coursesService.findAll();
   }
 
