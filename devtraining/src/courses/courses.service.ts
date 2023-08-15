@@ -16,7 +16,7 @@ export class CoursesService {
   ) {}
 
   async findAll() {
-    return this.courseRepository.find();
+    return this.courseRepository.find({ relations: ['tags'] });
   }
 
   async findOne(id: string) {
@@ -24,6 +24,7 @@ export class CoursesService {
       where: {
         id: +id,
       },
+      relations: ['tags'],
     });
     if (!course) {
       throw new NotFoundException(`Course ID #${id} not found`);
