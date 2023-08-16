@@ -1,5 +1,7 @@
 import { DataSource } from 'typeorm';
-import { CourseRefatoring1692114073158 } from './migrations/1692114073158-CourseRefatoring';
+import { CreateCoursesTable1692220242413 } from './migrations/1692220242413-CreateCoursesTable';
+import { CreateTagsTable1692221427311 } from './migrations/1692221427311-CreateTagsTable';
+
 export const databaseProviders = [
   {
     provide: 'DATA_SOURCE',
@@ -29,5 +31,5 @@ export const dataSource = new DataSource({
   database: 'postgres',
   entities: [__dirname + '/../**/*.entity.js'],
   synchronize: false,
-  migrations: [CourseRefatoring1692114073158],
+  migrations: [CreateCoursesTable1692220242413, CreateTagsTable1692221427311],
 });
