@@ -22,7 +22,7 @@ export class CoursesService {
   async findOne(id: string) {
     const course = await this.courseRepository.findOne({
       where: {
-        id: +id,
+        id: id,
       },
       relations: ['tags'],
     });
@@ -50,7 +50,7 @@ export class CoursesService {
         updateCourseDto.tags.map((name) => this.preloagTagByName(name)),
       ));
     const course = await this.courseRepository.preload({
-      id: +id,
+      id: id,
       ...updateCourseDto,
       tags,
     });
@@ -63,7 +63,7 @@ export class CoursesService {
   async remove(id: string) {
     const course = await this.courseRepository.findOne({
       where: {
-        id: +id,
+        id: id,
       },
     });
     if (!course) {
