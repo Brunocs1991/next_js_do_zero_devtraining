@@ -15,7 +15,7 @@ export const databaseProviders = [
         port: 5432,
         username: 'postgres',
         password: 'postgres',
-        database: 'postgres',
+        database: 'cursonestjs',
         entities: [__dirname + '/../**/*.entity.js'],
         synchronize: false,
       });
@@ -31,7 +31,7 @@ export const dataSource = new DataSource({
   port: 5432,
   username: 'postgres',
   password: 'postgres',
-  database: 'postgres',
+  database: 'cursonestjs',
   entities: [__dirname + '/../**/*.entity.js'],
   synchronize: false,
   migrations: [

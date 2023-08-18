@@ -9,7 +9,7 @@ services:
     ports:
       - "3001:3000"
     volumes:
-      - ./devtraining/:/home/node/app
+      - ./:/home/node/app
     depends_on:
       - db
 
