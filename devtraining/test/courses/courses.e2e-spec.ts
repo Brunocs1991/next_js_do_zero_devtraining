@@ -50,6 +50,15 @@ describe('Courses: /courses', () => {
     return request(app.getHttpServer())
       .post('/courses')
       .send(course)
-      .expect(HttpStatus.CREATED);
+      .expect(HttpStatus.CREATED)
+      .then(({ body }) => {
+        const expectedCourse = expect.objectContaining({
+          ...course,
+          tags: expect.arrayContaining(
+            course.tags.map((name) => expect.objectContaining({ name })),
+          ),
+        });
+        expect(body).toEqual(expectedCourse);
+      });
   });
 });
